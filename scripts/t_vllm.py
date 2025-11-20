@@ -22,15 +22,16 @@ model = "../Llama-3.1-8B-Instruct-FP8-Static"
 # model = "meta-llama/Llama-4-Scout-17B-16E-Instruct"
 model = "Qwen/Qwen3-30B-A3B"
 model = "../Qwen3-30B-A3B-FP8_DYNAMIC"
-# model = "../Qwen3-30B-A3B-FP8"
-#model = "../Qwen3-30B-A3B-FP8-Static"
-model = "../Llama-3.1-8B-Instruct-FP8-Static"
-model = "../Qwen3-0.6B-FP8-Static"
+model = "../Qwen3-30B-A3B-FP8"
+model = "../Qwen3-30B-A3B-FP8-Static"
+# model = "../Llama-3.1-8B-Instruct-FP8-Static"
+# model = "../Qwen3-0.6B-FP8-Static"
 #kwargs = {"tensor_parallel_size": 4, "enforce_eager": True}
 kwargs = {"tensor_parallel_size": 2, "enforce_eager": False}
 kwargs = {"tensor_parallel_size": 2, "enforce_eager": True}
 kwargs = {"tensor_parallel_size": 1, "enforce_eager": False}
-kwargs = {"tensor_parallel_size": 1, "enforce_eager": True}
+# kwargs = {"tensor_parallel_size": 1, "enforce_eager": True}
+
 if os.path.basename(model) in ["Qwen3-30B-A3B", "DeepSeek-V2-Lite-Chat"]:
     kwargs["enable_expert_parallel"] = True
 elif "Qwen3-30B-A3B" in model:
